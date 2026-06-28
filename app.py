@@ -37,9 +37,13 @@ def _load_or_create_secret():
         with open(SECRET_FILE, "r") as f:
             return f.read().strip()
     key = secrets.token_hex(32)
-    os.chmod(SECRET_FILE, 0o600) if os.name != "nt" else None
     with open(SECRET_FILE, "w") as f:
         f.write(key)
+    if os.name != "nt":
+        try:
+            os.chmod(SECRET_FILE, 0o600)
+        except OSError:
+            pass
     return key
 
 
