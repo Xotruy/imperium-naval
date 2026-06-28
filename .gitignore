@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.pyo
+naval.db
+.env
+*.db
+.secret_key
+$null
