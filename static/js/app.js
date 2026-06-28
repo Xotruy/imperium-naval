@@ -1910,8 +1910,11 @@ async function joinAsAdmin() {
   S.isAdmin     = true;
   if (res.token) S.authToken = res.token;
   saveSession();
-  const overlay = document.getElementById("countryPickerOverlay");
-  if (overlay) overlay.remove();
+  closeAllPanels();
+  const loginOvl = document.getElementById("loginOverlay");
+  if (loginOvl) loginOvl.remove();
+  const pickerOvl = document.getElementById("countryPickerOverlay");
+  if (pickerOvl) pickerOvl.remove();
   applySession();
 }
 
