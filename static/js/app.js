@@ -1634,9 +1634,6 @@ async function createFleet() {
       }
       ships.push({ ship_type: t, count, armor, regiments });
     }
-      }
-      ships.push({ ship_type: t, count, armor });
-    }
   }
   if (!ships.length) return showToast("Добавьте хотя бы 1 корабль", "error");
 
